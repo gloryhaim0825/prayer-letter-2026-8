@@ -1150,14 +1150,18 @@ body.dark-mode .security-notice i {
     transform: translateY(0);
 }
 
-/* Responsive Styles */
+/* ==========================================================================
+   Mobile Responsive System & Adaptive Viewports
+   ========================================================================== */
+
 @media (max-width: 900px) {
     .hero-title {
-        font-size: 2.3rem;
+        font-size: clamp(2rem, 5vw, 2.8rem);
     }
     
     .story-grid, .story-grid.reverse {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .story-grid.reverse .story-content {
@@ -1168,65 +1172,310 @@ body.dark-mode .security-notice i {
         order: 2;
     }
     
-    .support-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .epilogue-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
     
     .epilogue-icon-box {
-        margin: 0 auto;
+        margin: 0 auto 1rem;
     }
 }
 
 @media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    .navbar {
+        height: 60px;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .logo-title {
+        font-size: 0.95rem;
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         right: 0;
-        background: var(--bg-secondary);
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
-        padding: 1.5rem 2rem;
-        gap: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        gap: 1rem;
         border-bottom: 1px solid var(--border-glass);
-        box-shadow: var(--card-shadow);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .nav-links.active {
         display: flex;
     }
-    
+
+    .nav-links a {
+        font-size: 1.05rem;
+        padding: 0.6rem 0;
+        display: block;
+        width: 100%;
+    }
+
     .hamburger {
         display: flex;
+        padding: 6px;
     }
-    
+
+    /* Hero Section Mobile */
+    .hero {
+        padding: 100px 1rem 50px;
+        min-height: auto;
+    }
+
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 6.5vw, 2.5rem);
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.75rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-meta-cards {
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .meta-card {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+    }
+
+    .hero-cover-container {
+        margin-top: 1.5rem;
+    }
+
+    .cover-card {
+        padding: 0.6rem;
+        border-radius: 18px;
+    }
+
+    .main-cover-img {
+        max-height: 320px;
+        border-radius: 12px;
+    }
+
+    .security-notice {
+        font-size: 0.85rem;
+        padding: 0.9rem 1.1rem;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        border-radius: 12px;
+    }
+
+    .security-notice i {
+        font-size: 1.25rem;
+    }
+
+    /* Main Container & Sections Mobile */
+    .main-container {
+        padding: 0 1rem 4rem;
+    }
+
+    .section {
+        padding-top: 3.5rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.65rem;
+    }
+
     .opening-card {
-        padding: 2rem 1.5rem;
-    }
-    
-    .story-card {
         padding: 1.75rem 1.25rem;
+        border-radius: 20px;
     }
-    
-    .story-badge {
-        left: 1.25rem;
+
+    .opening-text {
+        font-size: 1.02rem;
+        line-height: 1.8;
+        margin-bottom: 1.1rem;
     }
-    
-    .account-box {
+
+    .highlight-box {
+        padding: 1.1rem 1.25rem;
+        font-size: 0.95rem;
+        border-radius: 14px;
         flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Story Cards Mobile */
+    .story-timeline {
+        gap: 2.25rem;
+    }
+
+    .story-card {
+        padding: 1.75rem 1.1rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .story-badge {
+        top: -14px;
+        left: 1.1rem;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.9rem;
+    }
+
+    .story-title {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .story-desc {
+        font-size: 0.98rem;
+        line-height: 1.8;
+        margin-bottom: 0.85rem;
+    }
+
+    .insight-pill {
+        font-size: 0.88rem;
+        padding: 0.85rem 1rem;
+        border-radius: 12px;
         align-items: flex-start;
-        gap: 1rem;
     }
-    
-    .copy-btn {
-        width: 100%;
-        justify-content: center;
+
+    .img-frame {
+        border-radius: 14px;
     }
+
+    .epilogue-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .epilogue-text {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .faith-declaration {
+        padding: 1.1rem 1.25rem;
+        font-size: 1.05rem;
+        border-radius: 12px;
+    }
+
+    /* Prayer Cards Mobile */
+    .prayer-cards-container {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+    }
+
+    .prayer-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 18px;
+    }
+
+    .prayer-num {
+        font-size: 2rem;
+    }
+
+    .prayer-body h4 {
+        font-size: 1.15rem;
+    }
+
+    .pray-action-btn {
+        min-height: 48px;
+        font-size: 0.95rem;
+        border-radius: 12px;
+    }
+
+    .total-prayer-bar {
+        font-size: 0.95rem;
+        padding: 1rem 1.25rem;
+        border-radius: 16px;
+    }
+
+    /* Lightbox & Toast Mobile */
+    .lightbox-modal {
+        padding: 1rem;
+    }
+
+    .lightbox-content {
+        max-width: 98%;
+        max-height: 75vh;
+        border-radius: 12px;
+    }
+
+    .close-lightbox {
+        top: 1rem;
+        right: 1.25rem;
+        font-size: 2.2rem;
+    }
+
+    .back-to-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .toast {
+        width: 90%;
+        max-width: 360px;
+        text-align: center;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo-title {
+        max-width: 140px;
+        font-size: 0.88rem;
+    }
+
+    .hero-title {
+        font-size: 1.65rem;
+    }
+
+    .story-card {
+        padding: 1.5rem 0.9rem 1rem;
+    }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Print Styles */
