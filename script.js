@@ -3,6 +3,7 @@
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    initImageFallbacks();
     initThemeToggle();
     initScrollProgress();
     initScrollAnimations();
@@ -308,4 +309,24 @@ function showToast(message) {
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile & Cross-platform Image Path Fallback Handler                       */
+/* -------------------------------------------------------------------------- */
+function initImageFallbacks() {
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            const currentSrc = this.src;
+            if (currentSrc.includes('/images/')) {
+                const filename = currentSrc.split('/images/').pop();
+                console.log('Retrying image fallback from root folder:', filename);
+                this.src = './' + filename;
+            } else if (!currentSrc.includes('images/')) {
+                const filename = currentSrc.split('/').pop();
+                console.log('Retrying image fallback from images subfolder:', filename);
+                this.src = './images/' + filename;
+            }
+        });
+    });
 }

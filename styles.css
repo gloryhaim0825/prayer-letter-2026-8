@@ -596,11 +596,14 @@ body.dark-mode .security-notice i {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+    background: rgba(226, 232, 240, 0.5);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
 }
 
 .clickable-img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
