@@ -1030,6 +1030,118 @@ body.dark-mode .security-notice i {
 }
 
 /* Floating Top Button */
+/* Missionary Site Link Card & Footer Link */
+.site-link-section {
+    padding-top: 4rem;
+}
+
+.site-link-card {
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(217, 119, 6, 0.08) 100%);
+    border: 1px solid var(--border-glass);
+    border-left: 5px solid var(--accent-blue);
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-normal);
+}
+
+.site-link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--accent-blue);
+}
+
+.site-link-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    background: var(--accent-blue-light);
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.site-link-content {
+    flex: 1;
+}
+
+.site-link-tag {
+    font-family: var(--font-accent);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.site-link-title {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+.site-link-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.site-link-btn {
+    background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+    color: white !important;
+    text-decoration: none;
+    padding: 0.95rem 1.8rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.site-link-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
+}
+
+.footer-site-link {
+    margin-bottom: 2rem;
+}
+
+.footer-link-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--accent-gold-light);
+    color: var(--accent-gold) !important;
+    text-decoration: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 30px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    border: 1px solid rgba(217, 119, 6, 0.3);
+    transition: all var(--transition-fast);
+}
+
+.footer-link-badge:hover {
+    background: var(--accent-gold);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(217, 119, 6, 0.3);
+}
+
 .back-to-top {
     position: fixed;
     bottom: 2rem;
